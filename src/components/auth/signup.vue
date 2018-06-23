@@ -70,7 +70,10 @@
 
 <script>
 
-import axios from "axios";
+//import axios from "axios";
+
+// USE AXIOS CUSTOM INSTANCE
+import axios from "../../axios-auth.js"; // import instead the custom axios instance created, you can keep the axios name, but it will refer to the custom axios instance
 
   export default {
     data () {
@@ -108,7 +111,7 @@ import axios from "axios";
         console.log(formData)
 
         //! AXIOS POST REQUEST
-        axios.post('https://vuejs-axios-project.firebaseio.com/users.json', formData)
+        axios.post('/users.json', formData)
           .then(res => console.log(res))
           .catch(error => console.log(error))
 
